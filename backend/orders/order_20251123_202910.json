@@ -1,0 +1,11 @@
+{
+  "drinkType": "cappuccino",
+  "size": "medium",
+  "milk": "whole milk",
+  "extras": [
+    "caramel drizzle"
+  ],
+  "name": "Asha",
+  "timestamp": "2025-11-23T20:29:10.255167",
+  "status": "pending"
+}
