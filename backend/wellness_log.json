@@ -1,0 +1,39 @@
+{
+  "entries": [
+    {
+      "text": "User is feeling fine.",
+      "timestamp": "2025-11-24T14:43:37.341675Z",
+      "source": "tool_call"
+    },
+    {
+      "text": "User wants all words to be logged for wellness purposes.",
+      "timestamp": "2025-11-24T14:47:11.130200Z",
+      "source": "tool_call"
+    },
+    {
+      "text": "User is feeling stressed, overwhelmed, and anxious.",
+      "timestamp": "2025-11-24T14:47:23.969141Z",
+      "source": "tool_call"
+    },
+    {
+      "text": "User is totally stressed.",
+      "timestamp": "2025-11-24T14:47:58.071229Z",
+      "source": "tool_call"
+    },
+    {
+      "text": "User is totally stressed and unable to think anything.",
+      "timestamp": "2025-11-24T14:48:09.762351Z",
+      "source": "tool_call"
+    },
+    {
+      "text": "User is struggling to get sleep due to stress.",
+      "timestamp": "2025-11-24T14:49:27.231093Z",
+      "source": "tool_call"
+    },
+    {
+      "text": "User is feeling good after our conversation.",
+      "timestamp": "2025-11-24T14:50:31.782067Z",
+      "source": "tool_call"
+    }
+  ]
+}

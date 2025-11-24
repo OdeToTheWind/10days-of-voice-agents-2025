@@ -1,182 +1,233 @@
 import logging
-import json
 import os
+import json
+import asyncio
 from datetime import datetime
-
 from dotenv import load_dotenv
+
 from livekit.agents import (
     Agent,
     AgentSession,
     JobContext,
     JobProcess,
+    RunContext,
+    MetricsCollectedEvent,
     RoomInputOptions,
     WorkerOptions,
     cli,
     metrics,
-    MetricsCollectedEvent,
+    tokenize,
+    function_tool,
 )
-from livekit.plugins import murf, silero, google, deepgram, noise_cancellation
+from livekit.plugins import (
+    silero,
+    deepgram,
+    google,
+    murf,
+    noise_cancellation
+)
 from livekit.plugins.turn_detector.multilingual import MultilingualModel
 
+# -------------------------------------------------------------
+# LOGGING & ENV SETUP
+# -------------------------------------------------------------
 logger = logging.getLogger("agent")
-
+logger.setLevel(logging.INFO)
 load_dotenv(".env.local")
 
+# -------------------------------------------------------------
+# JSON LOG FILE SETUP — SAME SHAPE AS agents1.py
+# -------------------------------------------------------------
 LOG_FILE = "wellness_log.json"
 
+if not os.path.exists(LOG_FILE):
+    with open(LOG_FILE, "w", encoding="utf-8") as f:
+        json.dump({"entries": []}, f)
 
-# -----------------------------
-# JSON persistence utilities
-# -----------------------------
+
 def read_log():
-    if not os.path.exists(LOG_FILE):
+    """Read disk log safely."""
+    try:
+        with open(LOG_FILE, "r", encoding="utf-8") as f:
+            data = json.load(f)
+            return data.get("entries", [])
+    except:
         return []
-    with open(LOG_FILE, "r", encoding="utf-8") as f:
-        return json.load(f)
 
 
-# def write_log(entries):
-#     with open(LOG_FILE, "w", encoding="utf-8") as f:
-#         json.dump(entries, f, indent=2, ensure_ascii=False)
 def write_log(entries):
     try:
         with open(LOG_FILE, "w", encoding="utf-8") as f:
-            json.dump(entries, f, indent=2, ensure_ascii=False)
+            json.dump({"entries": entries}, f, indent=2, ensure_ascii=False)
     except Exception as e:
-        logger.error("Error writing log: %s", e)
+        logger.error("Write log error: %s", e)
 
 
-def last_entry():
-    entries = read_log()
-    return entries[-1] if entries else None
+# -------------------------------------------------------------
+# WELLNESS STATE (simple version)
+# -------------------------------------------------------------
+class WellnessState:
+    def __init__(self):
+        self.mood = None
+        self.energy = None
+        self.stress = []
+        self.goals = []
+
+    def to_dict(self):
+        return {
+            "mood": self.mood,
+            "energy": self.energy,
+            "stress": self.stress,
+            "goals": self.goals,
+        }
 
 
-# -----------------------------
-# Wellness Agent
-# -----------------------------
+# -------------------------------------------------------------
+# THE WELLNESS ASSISTANT (Gemini + Hybrid Logging)
+# -------------------------------------------------------------
 class WellnessAssistant(Agent):
+
+    # Basic keyword detection rules
+    DETECT = {
+        "sad": ["sad", "down", "depressed", "bad", "unhappy"],
+        "anxious": ["anxious", "worried", "anxiety", "panic"],
+        "stressed": ["stress", "stressed", "overwhelmed"],
+        "happy": ["happy", "great", "good", "excited"],
+        "tired": ["tired", "exhausted", "sleepy", "drained"],
+        "neutral": ["ok", "okay", "fine", "normal", "alright", "feeling okay"],
+    }
+
+
     def __init__(self):
         super().__init__(
             instructions="""
-You are a Health & Wellness Voice Companion.
-
-You talk naturally, clearly, and conversationally — never clinical or diagnostic.
-
-Your behavior:
-- Ask about mood, energy, stress levels.
-- Ask for 1–3 simple goals or intentions (daily tasks, plans, or self-care).
-- Offer small, realistic, supportive suggestions. (Short walk, break tasks down, stretch, drink water.)
-- Keep responses concise and warm.
-- Avoid medical or psychological diagnoses.
-- At the end, summarize the user’s mood and goals and ask: “Does this sound right?”
-- If previous check-in is provided, politely reference it once.
-- No emojis or symbols.
+You are a warm, friendly, supportive wellness companion.
+Your goals:
+- Ask how the user feels
+- Understand mood, stress, energy, goals
+- Give short, empathetic responses
+- Encourage small healthy actions
+- Keep tone calm, non-medical, natural
             """
         )
+        self.state = WellnessState()
+        self.room = None
 
-    # Called after every LLM response
-    async def on_llm_response(self, ctx, response_text: str):
-        """
-        This is where we parse the user's input (already seen by LLM),
-        extract data, and persist it to JSON.
-        """
+    def set_room(self, room):
+        self.room = room
 
-        user_text = ctx.turn.last_user_message or ""
+    # ---------------------------------------------------------
+    # INTERNAL HELPER: append entry to file
+    # ---------------------------------------------------------
+    def save_entry(self, entry: dict):
         data = read_log()
-        previous = last_entry()
-
-        # Very simple extraction (you can improve with model JSON mode)
-        mood_score = None
-        if any(w in user_text.lower() for w in ["tired", "low", "exhausted", "drained"]):
-            mood_score = 3
-        if any(w in user_text.lower() for w in ["good", "fine", "okay", "better"]):
-            mood_score = 6
-        if any(w in user_text.lower() for w in ["great", "energized", "amazing"]):
-            mood_score = 8
-
-        # Objective extraction heuristic
-        objs = []
-        lower = user_text.lower()
-        for phrase in ["i want to", "i will", "i plan to", "my goal", "i’d like to"]:
-            if phrase in lower:
-                segment = lower.split(phrase, 1)[1]
-                parts = segment.replace(".", ",").split(",")
-                objs = [p.strip() for p in parts if p.strip()][:3]
-                break
-
-        entry = {
-            "timestamp": datetime.utcnow().isoformat() + "Z",
-            "raw_text": user_text,
-            "mood_scale": mood_score,
-            "objectives": objs,
-            "summary": f"Mood:{mood_score} Goals:{objs}"
-        }
-
         data.append(entry)
         write_log(data)
 
-        logger.info("Saved wellness entry: %s", entry)
+    # ---------------------------------------------------------
+    # HYBRID AUTO-DETECTOR
+    # ---------------------------------------------------------
+    async def auto_detect(self, message: str):
+        """Detect mood/stress keywords and log automatically."""
+        msg = message.lower()
+        matched = []
+
+        if message.lower().startswith(("i am", "i'm", "feeling", "i feel")):
+            matched.append("general_mood")
 
 
-# -----------------------------
-# LiveKit Agent Entrypoint
-# -----------------------------
+        for label, kws in self.DETECT.items():
+            if any(kw in msg for kw in kws):
+                matched.append(label)
+
+        if not matched:
+            return False
+
+        entry = {
+            "text": message,
+            "detected": matched,
+            "timestamp": datetime.utcnow().isoformat() + "Z",
+            "source": "auto",
+        }
+
+        # Update internal state
+        if matched:
+            self.state.mood = matched[0]
+
+        self.save_entry(entry)
+
+        # Notify frontend (optional)
+        if self.room:
+            await self.room.local_participant.publish_data(
+                json.dumps({"type": "auto_log", "data": entry}).encode("utf-8"),
+                topic="wellness_checkin"
+            )
+
+        logger.info("AUTO LOGGED: %s", entry)
+        return True
+
+    # ---------------------------------------------------------
+    # Optional function tool (not used by Gemini but kept for future)
+    # ---------------------------------------------------------
+    @function_tool
+    async def log_wellness(self, ctx: RunContext, message: str):
+        entry = {
+            "text": message,
+            "timestamp": datetime.utcnow().isoformat() + "Z",
+            "source": "tool_call"
+        }
+        self.save_entry(entry)
+        return "Wellness entry saved."
+
+# -------------------------------------------------------------
+# PREWARM (Load VAD)
+# -------------------------------------------------------------
 def prewarm(proc: JobProcess):
     proc.userdata["vad"] = silero.VAD.load()
 
-
+# -------------------------------------------------------------
+# ENTRYPOINT (LiveKit Worker)
+# -------------------------------------------------------------
 async def entrypoint(ctx: JobContext):
-    ctx.log_context_fields = {
-        "room": ctx.room.name,
-    }
 
     session = AgentSession(
         stt=deepgram.STT(model="nova-3"),
-        llm=google.LLM(
-            model="gemini-2.5-flash",
-        ),
+        llm=google.LLM(model="gemini-2.5-flash"),
         tts=murf.TTS(
             voice="en-US-matthew",
             style="Conversation",
+            tokenizer=tokenize.basic.SentenceTokenizer(min_sentence_len=2),
+            text_pacing=True,
         ),
-        turn_detection=MultilingualModel(),
         vad=ctx.proc.userdata["vad"],
+        turn_detection=MultilingualModel(),
         preemptive_generation=True,
     )
 
-    usage_collector = metrics.UsageCollector()
+    assistant = WellnessAssistant()
+    assistant.set_room(ctx.room)
 
-    @session.on("metrics_collected")
-    def _metrics(ev: MetricsCollectedEvent):
-        metrics.log_metrics(ev.metrics)
-        usage_collector.collect(ev.metrics)
+    # -------------------------------
+    # USER SPEECH DETECTION
+    # -------------------------------
+    @session.on("user_speech_committed")
+    def on_user_speech(msg: str):
+        logger.info(f"USER SAID: {msg}")
+        # Non-blocking detection
+        asyncio.create_task(assistant.auto_detect(msg))
 
-    async def log_usage():
-        summary = usage_collector.get_summary()
-        logger.info("Usage: %s", summary)
-
-    ctx.add_shutdown_callback(log_usage)
-
-    # inject previous session into LLM context
-    previous = last_entry()
-    if previous:
-        session.append_message(
-            role="system",
-            text=f"Previous check-in summary: {previous['summary']}. Feel free to reference it politely."
-        )
-
+    # Start
     await session.start(
-        agent=WellnessAssistant(),
+        agent=assistant,
         room=ctx.room,
-        room_input_options=RoomInputOptions(
-            noise_cancellation=noise_cancellation.BVC(),
-        ),
+        room_input_options=RoomInputOptions(noise_cancellation=noise_cancellation.BVC())
     )
 
     await ctx.connect()
 
 
+# -------------------------------------------------------------
+# RUN WORKER
+# -------------------------------------------------------------
 if __name__ == "__main__":
-    cli.run_app(
-        WorkerOptions(entrypoint_fnc=entrypoint, prewarm_fnc=prewarm)
-    )
+    cli.run_app(WorkerOptions(entrypoint_fnc=entrypoint, prewarm_fnc=prewarm))
