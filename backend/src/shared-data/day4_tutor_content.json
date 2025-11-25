@@ -1,0 +1,50 @@
+[
+  {
+    "id": "continents",
+    "title": "Continents & Oceans",
+    "summary": "Earth's landmass is divided into seven continents: Asia, Africa, North America, South America, Antarctica, Europe, and Australia. These continents vary widely in climate, population, and biodiversity. The planet also has five major oceans—Pacific, Atlantic, Indian, Southern, and Arctic—which influence global climate, weather patterns, and trade routes. Understanding continents and oceans helps us understand human settlement, ecosystems, and global geography.",
+    "sample_question": "Name the seven continents and explain why oceans play a major role in climate and human activity."
+  },
+  {
+    "id": "landforms",
+    "title": "Major Landforms",
+    "summary": "Landforms are natural physical features on Earth's surface. Mountains are elevated areas formed by tectonic forces; plains are flat regions ideal for agriculture; plateaus are elevated flatlands; deserts are dry regions with very low rainfall; and valleys are low areas between hills or mountains. These landforms influence climate, vegetation, human settlement patterns, and economic activities like farming and mining.",
+    "sample_question": "What are plateaus and how are they different from mountains? Give one example of each."
+  },
+  {
+    "id": "climate_zones",
+    "title": "Climate Zones",
+    "summary": "Earth has different climate zones due to varying latitudes, altitude, and distance from oceans. The primary zones are tropical (hot and humid), temperate (moderate temperatures), and polar (very cold). Sub-zones include arid, Mediterranean, and highland climates. Climate zones determine vegetation, wildlife, agriculture, and the lifestyles of people living there.",
+    "sample_question": "Why are tropical regions warmer than temperate regions? How does latitude affect climate?"
+  },
+  {
+    "id": "water_cycle",
+    "title": "The Water Cycle",
+    "summary": "The water cycle describes how water moves continuously through evaporation, condensation, precipitation, and collection. Oceans, rivers, lakes, clouds, and groundwater all participate in this process. The water cycle is essential for regulating climate, supporting agriculture, and sustaining ecosystems. Without it, life on Earth could not exist.",
+    "sample_question": "Explain evaporation and condensation. How do these processes help form clouds?"
+  },
+  {
+    "id": "plate_tectonics",
+    "title": "Plate Tectonics",
+    "summary": "The Earth's crust is broken into large pieces called tectonic plates that float on semi-molten mantle below. Their movement causes earthquakes, volcanic eruptions, and the formation of mountains. Convergent boundaries push plates together, divergent boundaries pull them apart, and transform boundaries slide plates past one another. These processes shape Earth’s surface over millions of years.",
+    "sample_question": "What happens at a convergent boundary, and how does it create mountains?"
+  },
+  {
+    "id": "ecosystems",
+    "title": "Ecosystems & Biomes",
+    "summary": "An ecosystem is a community of living organisms interacting with each other and their environment. Biomes are large global ecosystems classified by climate, vegetation, and wildlife—for example, rainforests, deserts, grasslands, and tundra. Biomes determine biodiversity levels and influence human activities such as agriculture and settlement.",
+    "sample_question": "How do climate and vegetation determine the type of biome? Compare a desert and a rainforest."
+  },
+  {
+    "id": "population",
+    "title": "Human Population & Settlements",
+    "summary": "Population geography studies how people are distributed around the world and why they live where they do. Factors such as climate, water availability, fertile soil, and job opportunities influence settlement patterns. Urbanization—the movement from rural to urban areas—is rapidly increasing, shaping economies and resource use.",
+    "sample_question": "Why do major cities often develop near water bodies like rivers or coastlines?"
+  },
+  {
+    "id": "earth_rotation_revolution",
+    "title": "Earth’s Rotation & Revolution",
+    "summary": "Earth rotates west to east once every 24 hours, causing day and night. It also revolves around the sun in a 365-day orbit, creating seasons due to the tilt of its axis. Rotation affects time zones, winds, and ocean currents, while revolution explains seasonal changes in temperature and daylight.",
+    "sample_question": "Why do we experience seasons? Explain using Earth’s tilt and revolution around the sun."
+  }
+]
