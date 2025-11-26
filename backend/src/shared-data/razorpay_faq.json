@@ -1,0 +1,31 @@
+{
+  "company": {
+    "name": "Razorpay",
+    "description": "Razorpay is an Indian full-stack financial solutions company that provides payment gateway, payouts, subscriptions, and banking/finance products to businesses. Founded in 2014, Razorpay supports multiple payment methods (cards, UPI, netbanking, wallets) and developer-friendly APIs.",
+    "headquarters": "Bengaluru, India",
+    "founded": "2014"
+  },
+  "pricing_summary": "Razorpay uses a pay-as-you-go pricing model with no setup fees for standard plans. Transaction fees vary by payment method and plan; Razorpay also offers Enterprise/custom pricing for high-volume clients.",
+  "faqs": [
+    {
+      "q": "What does Razorpay do?",
+      "a": "Razorpay provides payments infrastructure and financial tools to businesses: payments (gateway), subscriptions, payouts, and corporate banking services."
+    },
+    {
+      "q": "Do you have a free tier?",
+      "a": "Razorpay typically uses a pay-as-you-go model with no setup fees for the standard plan. There is a sandbox/test mode for integrations but production transactions have per-transaction charges."
+    },
+    {
+      "q": "Who is Razorpay for?",
+      "a": "Startups, ecommerce merchants, SMEs, enterprise customers, and developers who need payment processing, subscription billing, payouts, or banking APIs."
+    },
+    {
+      "q": "How can I test integration?",
+      "a": "Use Razorpay sandbox environment and generate test API keys. No money is deducted in test mode."
+    },
+    {
+      "q": "Do you offer enterprise plans?",
+      "a": "Yes — Enterprise/custom pricing and SLAs are available for high-volume businesses and are handled via a sales or account team."
+    }
+  ]
+}
