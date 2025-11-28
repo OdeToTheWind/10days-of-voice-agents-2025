@@ -1,0 +1,136 @@
+{
+  "Fresh Vegetables": [
+    {
+      "id": "veg001",
+      "name": "Tomato",
+      "quantity": "1 kg",
+      "price": 45
+    },
+    {
+      "id": "veg002",
+      "name": "Potato",
+      "quantity": "1 kg",
+      "price": 30
+    },
+    {
+      "id": "veg003",
+      "name": "Onion",
+      "quantity": "1 kg",
+      "price": 40
+    },
+    {
+      "id": "veg004",
+      "name": "Carrot",
+      "quantity": "500 gm",
+      "price": 25
+    }
+  ],
+
+  "Fruits": [
+    {
+      "id": "fruit001",
+      "name": "Apple (Red)",
+      "quantity": "1 kg",
+      "price": 140
+    },
+    {
+      "id": "fruit002",
+      "name": "Banana",
+      "quantity": "6 Pc",
+      "price": 35
+    },
+    {
+      "id": "fruit003",
+      "name": "Orange",
+      "quantity": "1 kg",
+      "price": 80
+    },
+    {
+      "id": "fruit004",
+      "name": "Grapes (Black)",
+      "quantity": "500 gm",
+      "price": 60
+    }
+  ],
+
+  "Bakery Items": [
+    {
+      "id": "bak001",
+      "name": "White Bread",
+      "quantity": "1 Pc",
+      "price": 45
+    },
+    {
+      "id": "bak002",
+      "name": "Whole Wheat Bread",
+      "quantity": "1 Pc",
+      "price": 55
+    },
+    {
+      "id": "bak003",
+      "name": "Tea Cake",
+      "quantity": "250 gm",
+      "price": 80
+    },
+    {
+      "id": "bak004",
+      "name": "Croissant",
+      "quantity": "1 Pc",
+      "price": 35
+    }
+  ],
+
+  "Milk and Dairy Products": [
+    {
+      "id": "dairy001",
+      "name": "Toned Milk",
+      "quantity": "1 L",
+      "price": 52
+    },
+    {
+      "id": "dairy002",
+      "name": "Curd",
+      "quantity": "500 gm",
+      "price": 28
+    },
+    {
+      "id": "dairy003",
+      "name": "Butter",
+      "quantity": "100 gm",
+      "price": 55
+    },
+    {
+      "id": "dairy004",
+      "name": "Cheese Slices",
+      "quantity": "10 Pc",
+      "price": 95
+    }
+  ],
+
+  "Snacks": [
+    {
+      "id": "snk001",
+      "name": "Potato Chips",
+      "quantity": "150 gm",
+      "price": 40
+    },
+    {
+      "id": "snk002",
+      "name": "Nachos",
+      "quantity": "100 gm",
+      "price": 30
+    },
+    {
+      "id": "snk003",
+      "name": "Chocolate Cookies",
+      "quantity": "1 Pc",
+      "price": 50
+    },
+    {
+      "id": "snk004",
+      "name": "Salted Peanuts",
+      "quantity": "200 gm",
+      "price": 45
+    }
+  ]
+}

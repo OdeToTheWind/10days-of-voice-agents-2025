@@ -1,0 +1,226 @@
+[
+  {
+    "id": "g1",
+    "name": "Whole Wheat Bread",
+    "category": "Groceries",
+    "price": 2.5,
+    "brand": "HealthyLoaf",
+    "size": "500g",
+    "tags": [
+      "bread",
+      "vegan"
+    ]
+  },
+  {
+    "id": "g2",
+    "name": "Large Eggs (12)",
+    "category": "Groceries",
+    "price": 3.0,
+    "brand": "FarmFresh",
+    "size": "12pcs",
+    "tags": [
+      "eggs"
+    ]
+  },
+  {
+    "id": "g3",
+    "name": "Whole Milk 1L",
+    "category": "Groceries",
+    "price": 1.8,
+    "brand": "DairyPure",
+    "size": "1L",
+    "tags": [
+      "milk",
+      "dairy"
+    ]
+  },
+  {
+    "id": "g4",
+    "name": "Peanut Butter (500g)",
+    "category": "Groceries",
+    "price": 4.0,
+    "brand": "CrunchyCo",
+    "size": "500g",
+    "tags": [
+      "peanut butter",
+      "spread"
+    ]
+  },
+  {
+    "id": "g5",
+    "name": "Pasta Penne 500g",
+    "category": "Groceries",
+    "price": 2.0,
+    "brand": "PastaKing",
+    "size": "500g",
+    "tags": [
+      "pasta",
+      "vegan"
+    ]
+  },
+  {
+    "id": "s1",
+    "name": "Salted Potato Chips 150g",
+    "category": "Snacks",
+    "price": 1.5,
+    "brand": "CrispUp",
+    "size": "150g",
+    "tags": [
+      "chips",
+      "snack"
+    ]
+  },
+  {
+    "id": "s2",
+    "name": "Dark Chocolate Bar 100g",
+    "category": "Snacks",
+    "price": 2.2,
+    "brand": "CocoaRich",
+    "size": "100g",
+    "tags": [
+      "chocolate"
+    ]
+  },
+  {
+    "id": "p1",
+    "name": "Margherita Pizza (Medium)",
+    "category": "Prepared food",
+    "price": 9.99,
+    "brand": "QuickBake",
+    "size": "medium",
+    "tags": [
+      "pizza",
+      "vegetarian"
+    ]
+  },
+  {
+    "id": "p2",
+    "name": "Grilled Chicken Sandwich",
+    "category": "Prepared food",
+    "price": 6.5,
+    "brand": "QuickBites",
+    "size": "single",
+    "tags": [
+      "sandwich",
+      "chicken"
+    ]
+  },
+  {
+    "id": "g6",
+    "name": "Tomato Pasta Sauce 400g",
+    "category": "Groceries",
+    "price": 2.5,
+    "brand": "Saucy",
+    "size": "400g",
+    "tags": [
+      "sauce",
+      "pasta"
+    ]
+  },
+  {
+    "id": "g7",
+    "name": "Cheddar Cheese 200g",
+    "category": "Groceries",
+    "price": 3.5,
+    "brand": "MilkyWay",
+    "size": "200g",
+    "tags": [
+      "cheese",
+      "dairy"
+    ]
+  },
+  {
+    "id": "g8",
+    "name": "Butter 250g",
+    "category": "Groceries",
+    "price": 2.0,
+    "brand": "Creamy",
+    "size": "250g",
+    "tags": [
+      "butter",
+      "dairy"
+    ]
+  },
+  {
+    "id": "g9",
+    "name": "Salt 500g",
+    "category": "Groceries",
+    "price": 0.8,
+    "brand": "PureSalt",
+    "size": "500g",
+    "tags": [
+      "salt"
+    ]
+  },
+  {
+    "id": "g10",
+    "name": "Black Pepper 50g",
+    "category": "Groceries",
+    "price": 1.2,
+    "brand": "SpiceWorld",
+    "size": "50g",
+    "tags": [
+      "pepper",
+      "spice"
+    ]
+  },
+  {
+    "id": "g11",
+    "name": "Ripe Bananas (6)",
+    "category": "Groceries",
+    "price": 1.6,
+    "brand": "",
+    "size": "6pcs",
+    "tags": [
+      "fruit",
+      "banana"
+    ]
+  },
+  {
+    "id": "g12",
+    "name": "Lettuce (1 head)",
+    "category": "Groceries",
+    "price": 1.0,
+    "brand": "",
+    "size": "1 head",
+    "tags": [
+      "vegetable",
+      "lettuce"
+    ]
+  },
+  {
+    "id": "g13",
+    "name": "Tomatoes (500g)",
+    "category": "Groceries",
+    "price": 2.0,
+    "brand": "",
+    "size": "500g",
+    "tags": [
+      "tomato",
+      "vegetable"
+    ]
+  },
+  {
+    "id": "d1",
+    "name": "Bottled Water 1.5L",
+    "category": "Drinks",
+    "price": 1.0,
+    "brand": "AquaClear",
+    "size": "1.5L",
+    "tags": [
+      "water",
+      "drink"
+    ]
+  },
+  {
+    "id": "d2",
+    "name": "Orange Juice 1L",
+    "category": "Drinks",
+    "price": 2.8,
+    "brand": "CitrusFresh",
+    "size": "1L",
+    "tags": [
+      "juice"
+    ]
+  }
+]
