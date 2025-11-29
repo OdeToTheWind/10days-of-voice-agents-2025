@@ -1,0 +1,83 @@
+{
+  "session": {
+    "turn": 0,
+    "started_at": null,
+    "arc": "awakening-at-the-pass"
+  },
+
+  "player": {
+    "name": "Player",
+    "class": "Mage",
+    "health": 100,
+    "mana": 60,
+    "primal_sources": ["Aetherwind", "Moonveil"],
+    "inventory": [],
+    "abilities": {
+      "gust": {
+        "description": "Pushes objects or enemies with a sudden burst of Aetherwind.",
+        "mana_cost": 5
+      },
+      "veil_glimmer": {
+        "description": "Creates a brief illusion using Moonveil magic.",
+        "mana_cost": 8
+      }
+    }
+  },
+
+  "world": {
+    "current_location": "dragon_scarred_pass",
+    "locations": {
+      "dragon_scarred_pass": {
+        "name": "Dragon-Scarred Mountain Pass",
+        "description": "An ancient ridge torn open long ago by the fall of a colossal dragon. The rocks still hum with emberlight scars, and winds carry faint whispers of dormant power.",
+        "connections": ["shattered_outlook", "whispering_fissure"],
+        "discovered": true
+      },
+
+      "shattered_outlook": {
+        "name": "Shattered Outlook",
+        "description": "A cliffside overlook where pieces of the mountain were blown apart by ancient magic. The wind pressure here shifts unpredictably.",
+        "connections": ["dragon_scarred_pass", "echoing_vale"],
+        "discovered": false
+      },
+
+      "whispering_fissure": {
+        "name": "Whispering Fissure",
+        "description": "A deep crack in the earth glowing with submerged arcane runes. Soft whispers echo from below, speaking in a forgotten draconic tongue.",
+        "connections": ["dragon_scarred_pass"],
+        "discovered": false
+      },
+
+      "echoing_vale": {
+        "name": "Echoing Vale",
+        "description": "A valley where sound behaves unnaturally, bouncing and warping through the air. Travelers report hearing voices from their past.",
+        "connections": ["shattered_outlook"],
+        "discovered": false
+      }
+    },
+
+    "npcs": {
+      "mysterious_wanderer": {
+        "name": "Arthon Veyl",
+        "race": "Moonshadow Elf",
+        "role": "Wanderer",
+        "location": "dragon_scarred_pass",
+        "description": "A calm, enigmatic traveler with pale markings that glow faintly under moonlight. Speaks indirectly, as if he knows more than he says.",
+        "met_player": false
+      }
+    },
+
+    "quests": {
+      "awakening": {
+        "name": "Awakening of the Aether",
+        "description": "Discover the truth behind the arcane disturbance at the Dragon-Scarred Pass.",
+        "status": "in_progress",
+        "steps_completed": 0
+      }
+    }
+  },
+
+  "logs": {
+    "events": []
+  }
+}
