@@ -1,0 +1,349 @@
+[
+  {
+    "id": "tshirt_basic",
+    "name": "Basic Cotton T-Shirt",
+    "category": "Apparel",
+    "price": 14.99,
+    "brand": "Everyday Wear",
+    "rating": 4.4,
+    "stock": 120,
+    "description": "Soft, breathable cotton t-shirt available in multiple colors. Ideal for daily comfort and casual wear.",
+    "tags": ["tshirt", "cotton", "casual", "basic"],
+    "variants": {
+      "colors": ["black", "white", "blue", "grey"],
+      "sizes": ["S", "M", "L", "XL"]
+    }
+  },
+  {
+    "id": "hoodie_classic",
+    "name": "Classic Fleece Hoodie",
+    "category": "Apparel",
+    "price": 34.99,
+    "brand": "UrbanFit",
+    "rating": 4.6,
+    "stock": 95,
+    "description": "Warm fleece hoodie with soft interior lining. Perfect for everyday comfort and layering.",
+    "tags": ["hoodie", "winter", "fleece", "warm"],
+    "variants": {
+      "colors": ["black", "maroon", "navy"],
+      "sizes": ["S", "M", "L", "XL"]
+    }
+  },
+  {
+    "id": "sneaker_white",
+    "name": "Lightweight White Sneakers",
+    "category": "Footwear",
+    "price": 49.99,
+    "brand": "Stride",
+    "rating": 4.5,
+    "stock": 60,
+    "description": "Minimal white sneakers designed for all-day comfort and versatility.",
+    "tags": ["shoes", "sneakers", "white", "casual"],
+    "variants": {
+      "sizes": [6, 7, 8, 9, 10, 11]
+    }
+  },
+  {
+    "id": "jeans_slim",
+    "name": "Slim Fit Stretch Jeans",
+    "category": "Apparel",
+    "price": 39.99,
+    "brand": "DenimCo",
+    "rating": 4.3,
+    "stock": 110,
+    "description": "Slim-fit jeans with stretch fabric for added comfort and mobility.",
+    "tags": ["jeans", "slim fit", "denim"],
+    "variants": {
+      "sizes": ["30", "32", "34", "36", "38"]
+    }
+  },
+  {
+    "id": "cap_baseball",
+    "name": "Classic Baseball Cap",
+    "category": "Accessories",
+    "price": 12.99,
+    "brand": "CapLine",
+    "rating": 4.2,
+    "stock": 150,
+    "description": "Classic adjustable baseball cap suitable for outdoor activities and casual style.",
+    "tags": ["cap", "hat", "baseball"]
+  },
+  {
+    "id": "jacket_windbreaker",
+    "name": "Windbreaker Jacket",
+    "category": "Apparel",
+    "price": 59.99,
+    "brand": "StormWear",
+    "rating": 4.6,
+    "stock": 40,
+    "description": "Lightweight and water-resistant windbreaker perfect for outdoor activities.",
+    "tags": ["jacket", "windbreaker", "outdoor"]
+  },
+  {
+    "id": "socks_cotton",
+    "name": "Cotton Socks (Pack of 3)",
+    "category": "Apparel",
+    "price": 9.99,
+    "brand": "FootSoft",
+    "rating": 4.3,
+    "stock": 200,
+    "description": "Pack of three soft and breathable cotton socks in assorted colors.",
+    "tags": ["socks", "cotton", "pack"]
+  },
+  {
+    "id": "backpack_travel",
+    "name": "Travel Backpack",
+    "category": "Bags",
+    "price": 69.99,
+    "brand": "JourneyGear",
+    "rating": 4.7,
+    "stock": 50,
+    "description": "Durable travel backpack with multiple compartments for organization and comfort.",
+    "tags": ["backpack", "travel", "bag"]
+  },
+  {
+    "id": "sunglasses_classic",
+    "name": "Classic UV Sunglasses",
+    "category": "Accessories",
+    "price": 19.99,
+    "brand": "SunGuard",
+    "rating": 4.4,
+    "stock": 80,
+    "description": "Timeless UV-protected sunglasses suitable for everyday wear.",
+    "tags": ["sunglasses", "shades", "uv"]
+  },
+  {
+    "id": "watch_sport",
+    "name": "Sport Watch",
+    "category": "Electronics",
+    "price": 89.99,
+    "brand": "TimePro",
+    "rating": 4.5,
+    "stock": 45,
+    "description": "Water-resistant sport watch with stopwatch, alarm, and durable design.",
+    "tags": ["watch", "sports", "waterproof"]
+  },
+  {
+    "id": "shirt_formal",
+    "name": "Formal Dress Shirt",
+    "category": "Apparel",
+    "price": 29.99,
+    "brand": "PrimeWear",
+    "rating": 4.4,
+    "stock": 90,
+    "description": "Crisp formal shirt suitable for office wear, events, and formal occasions.",
+    "tags": ["shirt", "formal", "office"],
+    "variants": {
+      "sizes": ["S", "M", "L", "XL"]
+    }
+  },
+  {
+    "id": "shorts_casual",
+    "name": "Casual Summer Shorts",
+    "category": "Apparel",
+    "price": 24.99,
+    "brand": "CoolWear",
+    "rating": 4.3,
+    "stock": 75,
+    "description": "Comfortable cotton shorts ideal for everyday summer wear.",
+    "tags": ["shorts", "summer", "casual"]
+  },
+  {
+    "id": "belt_leather",
+    "name": "Genuine Leather Belt",
+    "category": "Accessories",
+    "price": 19.99,
+    "brand": "CoreLeather",
+    "rating": 4.5,
+    "stock": 130,
+    "description": "Durable leather belt with a classic metal buckle.",
+    "tags": ["belt", "leather"]
+  },
+  {
+    "id": "jacket_denim",
+    "name": "Denim Jacket",
+    "category": "Apparel",
+    "price": 54.99,
+    "brand": "BlueStone",
+    "rating": 4.6,
+    "stock": 35,
+    "description": "Trendy denim jacket designed for a stylish, casual look.",
+    "tags": ["denim", "jacket", "casual"]
+  },
+  {
+    "id": "sneaker_black",
+    "name": "Black Sneakers",
+    "category": "Footwear",
+    "price": 49.99,
+    "brand": "Stride",
+    "rating": 4.5,
+    "stock": 55,
+    "description": "Sleek black sneakers designed for comfort and everyday use.",
+    "tags": ["shoes", "sneakers", "black"]
+  },
+  {
+    "id": "hat_winter",
+    "name": "Winter Knit Hat",
+    "category": "Accessories",
+    "price": 14.99,
+    "brand": "WinterWarm",
+    "rating": 4.3,
+    "stock": 100,
+    "description": "Warm knitted winter hat perfect for cold weather.",
+    "tags": ["hat", "winter", "knit"]
+  },
+  {
+    "id": "gloves_winter",
+    "name": "Winter Gloves",
+    "category": "Accessories",
+    "price": 12.99,
+    "brand": "WinterWarm",
+    "rating": 4.4,
+    "stock": 115,
+    "description": "Soft insulated gloves to keep your hands warm.",
+    "tags": ["gloves", "winter"]
+  },
+  {
+    "id": "scarf_wool",
+    "name": "Wool Winter Scarf",
+    "category": "Accessories",
+    "price": 16.99,
+    "brand": "WinterWarm",
+    "rating": 4.5,
+    "stock": 95,
+    "description": "Comfortable wool scarf designed for warmth and style.",
+    "tags": ["scarf", "wool", "winter"]
+  },
+  {
+    "id": "sneaker_running",
+    "name": "Running Shoes",
+    "category": "Footwear",
+    "price": 59.99,
+    "brand": "SpeedRun",
+    "rating": 4.6,
+    "stock": 48,
+    "description": "Lightweight running shoes built for stability and everyday workouts.",
+    "tags": ["running", "shoes", "sports"]
+  },
+  {
+    "id": "hoodie_zipper",
+    "name": "Full-Zip Hoodie",
+    "category": "Apparel",
+    "price": 39.99,
+    "brand": "UrbanFit",
+    "rating": 4.5,
+    "stock": 70,
+    "description": "Full-zip hoodie with soft fleece lining for comfort and warmth.",
+    "tags": ["hoodie", "zip", "fleece"]
+  },
+  {
+    "id": "tank_top",
+    "name": "Breathable Tank Top",
+    "category": "Apparel",
+    "price": 12.99,
+    "brand": "CoolWear",
+    "rating": 4.2,
+    "stock": 85,
+    "description": "Lightweight tank top perfect for hot weather and fitness activities.",
+    "tags": ["tank top", "summer"]
+  },
+  {
+    "id": "backpack_school",
+    "name": "School Backpack",
+    "category": "Bags",
+    "price": 44.99,
+    "brand": "EduPack",
+    "rating": 4.5,
+    "stock": 90,
+    "description": "Durable school backpack with compartments for books, laptop, and accessories.",
+    "tags": ["backpack", "school", "bag"]
+  },
+  {
+    "id": "earphones_wireless",
+    "name": "Wireless Earphones",
+    "category": "Electronics",
+    "price": 79.99,
+    "brand": "SoundLite",
+    "rating": 4.4,
+    "stock": 70,
+    "description": "Compact wireless earphones with high-quality audio and fast pairing.",
+    "tags": ["earphones", "wireless", "audio"]
+  },
+  {
+    "id": "smart_watch_pro",
+    "name": "Smart Watch Pro",
+    "category": "Electronics",
+    "price": 599.99,
+    "brand": "TechNova",
+    "rating": 4.7,
+    "stock": 20,
+    "description": "Premium smartwatch with fitness tracking, GPS, and cellular connectivity.",
+    "tags": ["smartwatch", "fitness", "gps", "premium"]
+  },
+  {
+    "id": "luxury_leather_jacket",
+    "name": "Luxury Leather Jacket",
+    "category": "Apparel",
+    "price": 799.99,
+    "brand": "EliteWear",
+    "rating": 4.8,
+    "stock": 10,
+    "description": "Premium handcrafted leather jacket offering unmatched style and durability.",
+    "tags": ["leather", "jacket", "luxury"]
+  },
+  {
+    "id": "designer_handbag",
+    "name": "Designer Leather Handbag",
+    "category": "Bags",
+    "price": 1200.00,
+    "brand": "Luxora",
+    "rating": 4.9,
+    "stock": 8,
+    "description": "Exclusive designer handbag made with premium leather and refined craftsmanship.",
+    "tags": ["handbag", "designer", "luxury"]
+  },
+  {
+    "id": "premium_laptop",
+    "name": "Premium Performance Laptop",
+    "category": "Electronics",
+    "price": 1499.99,
+    "brand": "TechElite",
+    "rating": 4.8,
+    "stock": 15,
+    "description": "High-performance laptop featuring powerful CPU, advanced graphics, and vibrant display.",
+    "tags": ["laptop", "premium", "performance"]
+  },
+  {
+    "id": "4k_tv_smart",
+    "name": "4K Ultra HD Smart TV",
+    "category": "Electronics",
+    "price": 999.99,
+    "brand": "ViewMax",
+    "rating": 4.7,
+    "stock": 25,
+    "description": "Stunning 4K Ultra HD smart TV with built-in apps, voice control, and vivid picture quality.",
+    "tags": ["tv", "4k", "smart"]
+  },
+  {
+    "id": "gaming_console_x",
+    "name": "Gaming Console X",
+    "category": "Electronics",
+    "price": 699.99,
+    "brand": "GamePulse",
+    "rating": 4.8,
+    "stock": 18,
+    "description": "Next-generation gaming console with ultra-fast load times and 4K gameplay.",
+    "tags": ["gaming", "console", "4k"]
+  },
+  {
+    "id": "high_end_camera",
+    "name": "Professional DSLR Camera",
+    "category": "Electronics",
+    "price": 1899.99,
+    "brand": "ProShot",
+    "rating": 4.9,
+    "stock": 12,
+    "description": "High-end DSLR camera with 4K video, interchangeable lenses, and superior image quality.",
+    "tags": ["camera", "dslr", "professional"]
+  }
+]
